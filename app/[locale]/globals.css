@@ -102,3 +102,12 @@
     @apply bg-background text-foreground;
   }
 }
+
+.theme-custom {
+    /* Name: custom color palette
+       Author: Ilias Ism
+       URL: https://gradient.page */
+
+    /* CSS: .bg-gradient { background: var(--gradient) } */
+    --gradient: linear-gradient(to top left, #ff0000, #00ff00, #0000ff);
+}

@@ -1,6 +1,5 @@
 import { Toaster } from "@/components/ui/sonner"
 import { GlobalState } from "@/components/utility/global-state"
-import { Providers } from "@/components/utility/providers"
 import TranslationsProvider from "@/components/utility/translations-provider"
 import initTranslations from "@/lib/i18n"
 import { Database } from "@/supabase/types"
@@ -10,12 +9,13 @@ import { Inter } from "next/font/google"
 import { cookies } from "next/headers"
 import { ReactNode } from "react"
 import "./globals.css"
+import { Providers } from "@/providers"
 
 const inter = Inter({ subsets: ["latin"] })
-const APP_NAME = "Chatbot UI"
-const APP_DEFAULT_TITLE = "Chatbot UI"
-const APP_TITLE_TEMPLATE = "%s - Chatbot UI"
-const APP_DESCRIPTION = "Chabot UI PWA!"
+const APP_NAME = "KONG Chat"
+const APP_DEFAULT_TITLE = "KONG Chat"
+const APP_TITLE_TEMPLATE = "%s - KONG"
+const APP_DESCRIPTION = "KONG Chat - Knowledge Oriented Neural Gorilla Chat"
 
 interface RootLayoutProps {
   children: ReactNode
@@ -89,7 +89,7 @@ export default async function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={inter.className}>
-        <Providers attribute="class" defaultTheme="dark">
+        <Providers>
           <TranslationsProvider
             namespaces={i18nNamespaces}
             locale={locale}
